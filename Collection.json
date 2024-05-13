@@ -1,0 +1,30 @@
+{
+  stores [
+    {
+      _id ObjectId,
+      name String,
+      location {
+        type String,  e.g., Point
+        coordinates [Number]  [longitude, latitude]
+      },
+      delivery_time String,
+      delivery_amount Number,
+      rating Number,
+      store_type [String],  e.g., grocery, mart, juices
+      discounts [
+        {
+          item String,
+          discount_percentage Number
+        }
+      ],
+      promotions [
+        {
+          title String,
+          description String,
+          start_date Date,
+          end_date Date
+        }
+      ]
+    }
+  ]
+}
