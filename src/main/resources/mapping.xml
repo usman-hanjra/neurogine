@@ -1,9 +1,18 @@
 <beanio xmlns="http://www.beanio.org/2012/03"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
-    <stream name="flatFile">
-        <record name="header" class="Header"/>
-        <record name="body" class="Body"/>
-        <record name="trailer" class="Trailer"/>
+
+
+    <stream name="flatFile" format="fixedlength">
+        <record name="header" class="com.neurogine.store.neuroginestoreapp.configurations.HeaderRecord" minOccurs="1" maxOccurs="1" />
+        <record name="body" class="com.neurogine.store.neuroginestoreapp.configurations.BodyRecord"  minOccurs="1" maxOccurs="3">
+            <segment name="repeatingSegment" minOccurs="1" maxOccurs="3" >
+                <field name="recordType" length="1" />
+                <field name="referenceNo" length="15"/>
+                <field name="amount" length="16"/>
+            </segment>
+
+        </record>
+        <record name="trailer" class="com.neurogine.store.neuroginestoreapp.configurations.TrailerRecord" minOccurs="1" maxOccurs="1" />
     </stream>
 </beanio>
