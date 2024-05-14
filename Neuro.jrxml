@@ -5,11 +5,11 @@
 	<queryString>
 		<![CDATA[select * from neurogine]]>
 	</queryString>
-	<field name="DATE" class="java.lang.Integer"/>
-	<field name="REFERENCENO" class="java.lang.Integer"/>
-	<field name="AMOUNT" class="java.lang.Integer"/>
-	<field name="STATUS" class="java.lang.Integer"/>
-	<field name="REMARKS" class="java.math.BigDecimal"/>
+	<field name="DATE" class="java.lang.String"/>
+	<field name="REFERENCENO" class="java.lang.String"/>
+	<field name="AMOUNT" class="java.math.BigDecimal"/>
+	<field name="STATUS" class="java.lang.String"/>
+	<field name="REMARKS" class="java.lang.String"/>
 	<background>
 		<band/>
 	</background>
